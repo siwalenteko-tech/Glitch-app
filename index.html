@@ -15,19 +15,17 @@
 </head>
 <body>
   <h1>GLITCH</h1>
-  <p>Be the error in the system</p>
+
+<h2 id="welcome" style="color:#00ffcc; text-align:center;"></h2>
+
+<div id="auth-box">
   <input type="email" placeholder="Email"><br>
   <input type="password" placeholder="Password"><br>
-  <button>LOGIN</button><br>
-  <button>SIGN UP</button>
-<script>
-  document.querySelectorAll('button')[0].onclick = function() {
-    window.location.href = 'home.html';
-  }
-  document.querySelectorAll('button')[1].onclick = function() {
-    alert('SIGN UP: Coming Soon!');
-  }
-</script>
+  <button onclick="signup()">SIGN UP</button>
+  <button onclick="login()">LOGIN</button>
+</div>
+
+<button id="logout-btn" onclick="logout()" style="display:none;">LOGOUT</button>
 <!-- LOGIN BUTTONS -->
 <button onclick="signup()">SIGN UP</button>
 <button onclick="login()">LOGIN</button>
