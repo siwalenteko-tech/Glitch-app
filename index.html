@@ -14,18 +14,19 @@
   </style>
 </head>
 <body>
-  <h1>GLITCH</h1>
-
+  
 <h2 id="welcome" style="color:#00ffcc; text-align:center;"></h2>
 
 <div id="auth-box">
-  <input type="email" placeholder="Email"><br>
-  <input type="password" placeholder="Password"><br>
+  <input type="email" placeholder="Email">
+  <input type="password" placeholder="Password">
   <button onclick="signup()">SIGN UP</button>
   <button onclick="login()">LOGIN</button>
 </div>
 
-<
+<button id="logout-btn" onclick="logout()" style="display:none;">LOGOUT</button>
+
+
 <!-- FIREBASE -->
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
