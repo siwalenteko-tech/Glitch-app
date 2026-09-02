@@ -77,6 +77,8 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebas
     document.getElementById("logout-btn").style.display = "block";
     document.getElementById("welcome").innerText = `Welcome ${user.email}`;
   } else {
+        document.getElementById("dashboard").style.display = "block"; // in the if
+    document.getElementById("dashboard").style.display = "none";  // in the else
     document.getElementById("auth-box").style.display = "block";
     document.getElementById("logout-btn").style.display = "none";
     document.getElementById("welcome").innerText = "";
