@@ -28,5 +28,50 @@
     alert('SIGN UP: Coming Soon!');
   }
 </script>
+<!-- LOGIN BUTTONS -->
+<button onclick="signup()">SIGN UP</button>
+<button onclick="login()">LOGIN</button>
+<button onclick="logout()">LOGOUT</button>
 
+<!-- FIREBASE -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyASgX3V17xe3Yras_M-tBfEUt2Uao7Cjmc",
+    authDomain: "glitch-36bba.firebaseapp.com",
+    projectId: "glitch-36bba",
+    storageBucket: "glitch-36bba.firebasestorage.app",
+    messagingSenderId: "939903826476",
+    appId: "1:939903826476:web:c6adc1e7ba75776e022f89",
+    measurementId: "G-VGPFY77287"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const auth = getAuth(app);
+
+  // Make functions work with the buttons
+  window.signup = () => {
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => alert("Account created!"))
+      .catch(e => alert(e.message));
+  }
+
+  window.login = () => {
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then(() => alert("Logged in!"))
+      .catch(e => alert(e.message));
+  }
+
+  window.logout = () => {
+    signOut(auth).then(() => alert("Logged out!"));
+  }
+</script>
 </html>
